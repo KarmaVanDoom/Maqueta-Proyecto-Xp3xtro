@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titulo": "Frecuencia Base (Original Mix)",
+    "artista": "Xp3xtro",
+    "genero": "Techno",
+    "tipo": "wav_direct",
+    "url": "assets/audio/frecuencia_base.wav",
+    "portada": "assets/img/cover1.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Nocturno en D Menor",
+    "artista": "Xp3xtro",
+    "genero": "Ambient",
+    "tipo": "soundcloud",
+    "url": "https://soundcloud.com/xp3xtro/nocturno-d-menor",
+    "portada": "assets/img/cover2.jpg"
+  }
+]

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiquetas SEO y Open Graph -->
+    <title>Xp3xtro | Productor Musical</title>
+    <meta name="description"
+        content="Portafolio oficial de Xp3xtro. Descubre mis últimos beats, producciones en alta calidad (.wav) y colaboraciones.">
+
+    <!-- Tailwind CSS (Vía CDN para desarrollo rápido) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter para un look muy limpio y premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Nuestros estilos segmentados -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body
+    class="bg-[#0a0a0a] text-white font-sans antialiased overflow-x-hidden selection:bg-yellow-600 selection:text-white">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 border-b border-yellow-500/30">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter uppercase">Xp3xtro</div>
+            <ul class="flex space-x-8 text-sm font-medium tracking-widest uppercase">
+                <li><a href="index.html" class="hover:text-yellow-500 transition-colors">Home</a></li>
+                <li><a href="musica.html"
+                        class="hover:text-yellow-500 transition-colors opacity-50 hover:opacity-100">Música</a></li>
+                <li><a href="contacto.html"
+                        class="hover:text-yellow-500 transition-colors opacity-50 hover:opacity-100">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN HERO (El primer impacto) -->
+    <main class="relative h-screen flex flex-col justify-center items-center px-8 z-10">
+        <!-- Efecto de luz de fondo (El "Alma" visual) -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-600/20 rounded-full blur-[120px] -z-10 animate-pulse-slow">
+        </div>
+
+        <h1 class="text-7xl md:text-9xl font-black tracking-tighter text-center leading-none mb-6">
+            <span
+                class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 drop-shadow-sm">
+                Productor Musical
+            </span>
+            <span class="block">Mix & Mastering</span>
+        </h1>
+
+
+        <button
+            class="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-full hover:scale-105 hover:bg-yellow-500 hover:text-black hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300">
+            Escuchar Catálogo
+        </button>
+
+        <!-- Indicador de Scroll -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50">
+            <span class="text-xs uppercase tracking-[0.3em] mb-2 font-bold text-yellow-500">Scroll</span>
+            <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </main>
+
+    <!-- SEGUNDO SCROLL (COTIZACIONES / SERVICIOS) -->
+    <section
+        class="min-h-screen bg-[#0a0a0a] py-32 px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+
+        <!-- Luz de fondo sutil detrás de la tarjeta -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-600/5 rounded-full blur-[120px] -z-10 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl w-full text-center mb-16 relative z-10">
+            <h2
+                class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600">
+                COTIZACIONES
+            </h2>
+            <p class="text-xl text-gray-400 font-light">
+                Servicios de producción garantizados para llevar tu sonido al próximo nivel.
+            </p>
+        </div>
+
+        <!-- Contenedor de Tarjetas de Precio -->
+        <div class="max-w-md w-full relative z-10 group">
+
+            <!-- Borde exterior brillante del precio -->
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-300">
+            </div>
+
+            <!-- Tarjeta Principal (Precio: Beat) -->
+            <div
+                class="relative bg-[#0f0f0f] border border-yellow-500/30 rounded-2xl p-10 flex flex-col items-center text-center overflow-hidden">
+
+                <!-- Destello interno decorativo -->
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-[50px] -mr-10 -mt-10 pointer-events-none">
+                </div>
+
+                <span
+                    class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-6">🎧</span>
+                <h3 class="text-2xl font-black text-white mb-2 tracking-wider uppercase">Beat</h3>
+
+                <!-- Etiqueta de Precio -->
+                <div class="flex items-end justify-center gap-1 my-6">
+                    <span class="text-xl text-yellow-500 font-bold mb-1">US$</span>
+                    <span
+                        class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 leading-none">35</span>
+                    <span class="text-xl text-gray-400 font-light mb-1">.00</span>
+                </div>
+
+                <ul class="text-gray-400 mb-10 font-light text-sm flex flex-col gap-3 w-full text-left px-4">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-yellow-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Beat Exclusivo personalizado</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-yellow-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Entrega en Trackouts (Stems) .WAV</span>
+                    </li>
+
+                </ul>
+
+                <button
+                    class="w-full py-4 bg-yellow-500 text-black rounded-xl hover:bg-yellow-400 transition-colors font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(234,179,8,0.25)] hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:scale-[1.02]">
+                    Solicitar Beat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERCER SCROLL (EL ESTUDIO) -->
+    <section
+        class="min-h-screen bg-[#0a0a0a] py-32 px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+
+        <!-- Elemento decorativo de fondo -->
+        <div
+            class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-yellow-600/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl w-full text-center mb-16">
+            <h2
+                class="text-4xl md:text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600">
+                THE STUDIO
+            </h2>
+        </div>
+
+        <div class="max-w-5xl w-full relative group">
+
+            <!-- Borde brillante restaurado para TODA la caja del Slider -->
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+            </div>
+
+            <!-- Arreglo slider -->
+            <div id="studio-slider"
+                class="overflow-hidden border border-white/10 bg-[#111] relative w-full rounded-2xl shadow-2xl z-10">
+                <div class="flex transition-transform duration-700 ease-[cubic-bezier(0.87,0,0.13,1)]"
+                    id="slider-track">
+
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0">
+                        <!-- Contenedor principal -->
+                        <div class="relative h-[450px] md:h-[600px] flex items-center justify-center overflow-hidden">
+                            <!-- Foto del estudio de Xp3xtro -->
+                            <div
+                                class="absolute inset-0 bg-[url('assets/img/estudio/estudio_1.PNG')] bg-cover bg-center opacity-70 hover:opacity-100 hover:scale-[1.03] transition-transform duration-[1.5s]">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0">
+                        <!-- Contenedor principal -->
+                        <div class="relative h-[450px] md:h-[600px] flex items-center justify-center overflow-hidden">
+                            <!-- Foto del estudio de Xp3xtro 2 -->
+                            <div
+                                class="absolute inset-0 bg-[url('assets/img/estudio/estudio_2.PNG')] bg-cover bg-center opacity-70 hover:opacity-100 hover:scale-[1.03] transition-transform duration-[1.5s]">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button id="slider-prev" aria-label="Anterior"
+                class="absolute left-2 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-yellow-500 hover:text-white bg-black/60 border border-yellow-500/30 hover:border-yellow-500 hover:bg-yellow-500/20 rounded-full backdrop-blur-md transition-all hover:scale-110 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button id="slider-next" aria-label="Siguiente"
+                class="absolute right-2 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-yellow-500 hover:text-white bg-black/60 border border-yellow-500/30 hover:border-yellow-500 hover:bg-yellow-500/20 rounded-full backdrop-blur-md transition-all hover:scale-110 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- CUARTO SCROLL (ARTISTAS / COLABORACIONES) -->
+    <section
+        class="min-h-[70vh] bg-[#0a0a0a] py-32 px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+
+        <!-- Elemento decorativo -->
+        <div
+            class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-yellow-600/5 rounded-full blur-[100px] -z-10 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl w-full text-center mb-16 relative z-10">
+            <h2
+                class="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase">
+                Colaboraciones
+            </h2>
+            <p class="text-yellow-600/70 font-black tracking-[0.3em] uppercase text-xs md:text-sm">
+                Créditos
+            </p>
+        </div>
+
+        <!-- Grid de Artistas -->
+        <div class="max-w-6xl w-full grid grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+
+            <!-- Artista 1 -->
+            <div class="group relative aspect-[4/5]">
+                <!-- Borde hover -->
+                <div
+                    class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500">
+                </div>
+                <div
+                    class="relative rounded-xl overflow-hidden border border-white/5 group-hover:border-yellow-500/30 flex flex-col items-center justify-end text-center h-full transition-all duration-300 group-hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)]">
+
+                    <!-- Imagen de fondo del artista -->
+                    <div
+                        class="absolute inset-0 bg-[#222] bg-[url('assets/img/colaboradores/lukarioht.png')] bg-cover bg-center group-hover:scale-110 transition-transform duration-700">
+                    </div>
+
+                    <!-- Degradado para lectura de texto -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <!-- Contenido Textual y Botón -->
+                    <div
+                        class="relative z-10 w-full p-6 flex flex-col items-center transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                        <span
+                            class="text-lg md:text-xl font-black text-white tracking-widest uppercase mb-1 drop-shadow-md">Lukarioht</span>
+                        <!-- Botón Conocer (Reemplazar href por el link a Instagram real) -->
+                        <a href="https://www.instagram.com/lukarioht/" target="_blank" rel="noopener noreferrer"
+                            class="mt-4 px-6 py-2 bg-yellow-500 text-black text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-[0_0_15px_rgba(234,179,8,0.3)] hover:bg-yellow-400 hover:scale-105 pointer-events-none group-hover:pointer-events-auto">
+                            Conocer
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artista 2 -->
+            <div class="group relative aspect-[4/5]">
+                <!-- Borde hover -->
+                <div
+                    class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500">
+                </div>
+                <div
+                    class="relative rounded-xl overflow-hidden border border-white/5 group-hover:border-yellow-500/30 flex flex-col items-center justify-end text-center h-full transition-all duration-300 group-hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)]">
+
+                    <div
+                        class="absolute inset-0 bg-[#222] bg-[url('assets/img/colaboradores/oficialdouble_r.png')] bg-cover bg-center group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <div
+                        class="relative z-10 w-full p-6 flex flex-col items-center transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                        <span
+                            class="text-lg md:text-xl font-black text-white tracking-widest uppercase mb-1 drop-shadow-md">Officialdouble_r</span>
+                        <a href="https://www.instagram.com/oficialdouble_r/" target="_blank" rel="noopener noreferrer"
+                            class="mt-4 px-6 py-2 bg-yellow-500 text-black text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-[0_0_15px_rgba(234,179,8,0.3)] hover:bg-yellow-400 hover:scale-105 pointer-events-none group-hover:pointer-events-auto">
+                            Conocer
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artista 3 -->
+            <div class="group relative aspect-[4/5]">
+                <!-- Borde hover -->
+                <div
+                    class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500">
+                </div>
+                <div
+                    class="relative rounded-xl overflow-hidden border border-white/5 group-hover:border-yellow-500/30 flex flex-col items-center justify-end text-center h-full transition-all duration-300 group-hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)]">
+
+                    <div
+                        class="absolute inset-0 bg-[#222] bg-[url('assets/img/colaboradores/eliah_gz.png')] bg-cover bg-center group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <div
+                        class="relative z-10 w-full p-6 flex flex-col items-center transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                        <span
+                            class="text-lg md:text-xl font-black text-white tracking-widest uppercase mb-1 drop-shadow-md">Elíah-Gz</span>
+                        <a href="https://www.instagram.com/eliah.gz/" target="_blank" rel="noopener noreferrer"
+                            class="mt-4 px-6 py-2 bg-yellow-500 text-black text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-[0_0_15px_rgba(234,179,8,0.3)] hover:bg-yellow-400 hover:scale-105 pointer-events-none group-hover:pointer-events-auto">
+                            Conocer
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative aspect-[4/5]">
+                <!-- Borde hover -->
+                <div
+                    class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500">
+                </div>
+                <div
+                    class="relative rounded-xl overflow-hidden border border-white/5 group-hover:border-yellow-500/30 flex flex-col items-center justify-end text-center h-full transition-all duration-300 group-hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)]">
+
+                    <div
+                        class="absolute inset-0 bg-[#222] bg-[url('assets/img/colaboradores/medelcillo.png')] bg-cover bg-center group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <div
+                        class="relative z-10 w-full p-6 flex flex-col items-center transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                        <span
+                            class="text-lg md:text-xl font-black text-white tracking-widest uppercase mb-1 drop-shadow-md">Medelcillo</span>
+                        <a href="https://www.instagram.com/medelcill0/" target="_blank" rel="noopener noreferrer"
+                            class="mt-4 px-6 py-2 bg-yellow-500 text-black text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-[0_0_15px_rgba(234,179,8,0.3)] hover:bg-yellow-400 hover:scale-105 pointer-events-none group-hover:pointer-events-auto">
+                            Conocer
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUINTO SCROLL (ENTREVISTA / MEDIOS) -->
+    <section
+        class="min-h-screen bg-[#0a0a0a] py-32 px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+
+        <!-- Elemento decorativo del fondo -->
+        <div
+            class="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-yellow-600/5 rounded-full blur-[120px] -z-10 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl w-full text-center mb-16 relative z-10">
+            <h2
+                class="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase">
+                Entrevista
+            </h2>
+
+        </div>
+
+        <!-- Contenedor del Video -->
+        <div class="max-w-4xl w-full relative z-10 group">
+
+            <!-- Borde exterior brillante del video -->
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-300">
+            </div>
+
+            <!-- Marco de la pantalla principal -->
+            <div
+                class="relative bg-[#0f0f0f] border border-yellow-500/30 rounded-2xl p-2 md:p-3 flex flex-col items-center overflow-hidden shadow-[0_10px_50px_rgba(0,0,0,0.8)]">
+
+                <!-- Contenedor 16:9 del video -->
+                <div
+                    class="relative w-full aspect-video rounded-xl overflow-hidden bg-black border border-white/5 group-hover:border-yellow-500/30 transition-colors duration-500">
+
+                    <!-- Reproductor de HTML5 -->
+                    <video class="w-full h-full object-cover" controls preload="metadata">
+                        <!-- El archivo irá a la carpeta assets/video/entrevista_1.mp4 -->
+                        <source src="assets/video/entrevista_1.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video. Actualízalo para ver la entrevista.
+                    </video>
+
+                </div>
+            </div>
+
+            <!-- Botón de YouTube bajo el reproductor -->
+            <div class="mt-10 flex justify-center relative z-20">
+                <a href="https://www.youtube.com/watch?v=QG-LxSRtUOQ" target="_blank" rel="noopener noreferrer"
+                    class="group flex items-center gap-3 px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-yellow-500 to-yellow-600 border border-yellow-400 text-black text-xs md:text-sm font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 hover:scale-[1.05] shadow-[0_0_30px_rgba(234,179,8,0.25)] hover:shadow-[0_0_50px_rgba(234,179,8,0.6)]">
+                    <svg class="w-6 h-6 md:w-8 md:h-8 text-black group-hover:text-red-700 transition-colors duration-300"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    <span>Ver en YouTube</span></span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Nuestros scripts segmentados -->
+    <!-- GSAP para animaciones fluidas (lo usaremos después) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

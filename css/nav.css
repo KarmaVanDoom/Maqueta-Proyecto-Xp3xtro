@@ -1,0 +1,7 @@
+/* ESTILOS DEL MENÚ (NAVBAR) */
+/* Creado para no saturar el index.html */
+
+header {
+    /* Filtro para que el menú se lea bien sea cual sea el fondo */
+    backdrop-filter: blur(10px);
+}

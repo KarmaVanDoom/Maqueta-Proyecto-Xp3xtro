@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Xp3xtro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body
+    class="bg-[#0a0a0a] text-white font-sans antialiased overflow-x-hidden selection:bg-yellow-600 selection:text-white">
+
+    <!-- MENÚ -->
+    <header class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 border-b border-yellow-500/30">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter uppercase"><a href="index.html">Xp3xtro</a></div>
+            <ul class="flex space-x-8 text-sm font-medium tracking-widest uppercase">
+                <li><a href="index.html"
+                        class="hover:text-yellow-500 transition-colors opacity-50 hover:opacity-100">Home</a></li>
+                <li><a href="musica.html" class="hover:text-yellow-500 transition-colors">Música</a></li>
+                <li><a href="contacto.html"
+                        class="hover:text-yellow-500 transition-colors opacity-50 hover:opacity-100">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PERRFIL / CATÁLOGO -->
+    <main class="min-h-screen pt-32 px-8 max-w-7xl mx-auto z-10">
+        <h1
+            class="text-5xl md:text-7xl font-black tracking-tighter mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 drop-shadow-sm">
+            EL CATÁLOGO
+        </h1>
+
+        <!-- ESTA ES LA CAJA QUE LLENAREMOS CON JAVASCRIPT DESDE EL JSON -->
+        <div id="contenedor-canciones" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- La estructura visual será inyectada aquí por JavaScript luego -->
+            <div class="p-8 border border-white/10 bg-white/5 rounded-2xl animate-pulse">
+                <p class="text-gray-500">Cargando tracks...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
