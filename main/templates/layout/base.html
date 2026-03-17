@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Xp3xtro | Productor Musical{% endblock %}</title>
+    <meta name="description"
+        content="{% block description %}Portafolio oficial de Xp3xtro. Descubre mis últimos beats, producciones en alta calidad (.wav) y colaboraciones.{% endblock %}">
+
+    <!-- Tailwind CSS (Compilado para Producción) -->
+    <link rel="stylesheet" href="{% static 'css/tailwind_output.css' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Estilos base comunes -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body
+    class="bg-[#0a0a0a] text-white font-sans antialiased overflow-x-hidden selection:bg-yellow-600 selection:text-white">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="fixed top-0 w-full z-50 mix-blend-difference px-4 md:px-8 py-4 md:py-6 border-b border-yellow-500/30">
+        <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-3 md:gap-0">
+            <div class="text-xl md:text-2xl font-black tracking-tighter uppercase"><a href="{% url 'main:home' %}">Xp3xtro</a></div>
+            <ul class="flex space-x-6 md:space-x-8 text-xs md:text-sm font-medium tracking-widest uppercase">
+                <li><a href="{% url 'main:home' %}"
+                        class="hover:text-yellow-500 transition-colors {% block nav_home %}opacity-50 hover:opacity-100{% endblock %}">Home</a></li>
+                <li><a href="{% url 'main:music' %}"
+                        class="hover:text-yellow-500 transition-colors {% block nav_music %}opacity-50 hover:opacity-100{% endblock %}">Música</a></li>
+                <li><a href="{% url 'main:contact' %}"
+                        class="hover:text-yellow-500 transition-colors {% block nav_contact %}opacity-50 hover:opacity-100{% endblock %}">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENT BLOCK -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Scripts -->
+    {% block extra_scripts %}
+    {% endblock %}
+    
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
