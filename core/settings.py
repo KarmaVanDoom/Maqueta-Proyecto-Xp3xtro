@@ -96,6 +96,7 @@ DATABASES = {
 # Configuraciones para bases de datos de producción (usando DATABASE_URL de Render)
 if 'RENDER' in os.environ:
     DATABASES['default'] = dj_database_url.config(
+        default='sqlite:///db.sqlite3',
         conn_max_age=600,
         conn_health_checks=True,
     )
