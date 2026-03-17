@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: xp3xtro
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn core.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: RENDER
+        value: true
