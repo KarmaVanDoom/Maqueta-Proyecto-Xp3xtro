@@ -1,39 +1,181 @@
 {% extends 'layout/base.html' %}
+{% load static %}
 
-{% block title %}Catálogo | Xp3xtro{% endblock %}
+{% block title %}Xp3xtro | Música{% endblock %}
+
+{% block nav_music %}opacity-100 text-yellow-500{% endblock %}
 
 {% block extra_css %}
-{% load static %}
 <link rel="stylesheet" href="{% static 'css/musica.css' %}">
 {% endblock %}
 
-{% block nav_music %}{% endblock %}
-
 {% block content %}
+<!-- SECCIÓN HERO MÚSICA -->
+<main class="relative flex flex-col items-center px-4 md:px-8 z-10 pt-28 md:pt-32 pb-16">
+    <!-- Luz de fondo mejorada para mayor visibilidad y profundidad -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-[700px] md:h-[700px] bg-gradient-to-br from-yellow-500/20 to-yellow-700/10 rounded-full blur-[100px] md:blur-[150px] -z-10 animate-pulse-slow"></div>
+    <!-- Gradiente en la parte superior para atenuar contra el navbar oscuro -->
+    <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#0a0a0a] to-transparent z-0 pointer-events-none"></div>
 
-    <!-- PERRFIL / CATÁLOGO -->
-    <main class="min-h-screen pt-32 px-8 max-w-7xl mx-auto z-10">
-        <h1
-            class="text-5xl md:text-7xl font-black tracking-tighter mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 drop-shadow-sm">
-            EL CATÁLOGO
+    <div class="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto">
+        <!-- Badge premium superior -->
+        <span class="px-5 py-2 mb-6 md:mb-8 text-[10px] md:text-xs font-black tracking-[0.3em] uppercase text-yellow-500 border border-yellow-500/30 rounded-full bg-yellow-500/5 backdrop-blur-sm shadow-[0_0_15px_rgba(234,179,8,0.1)] border-b-2">
+            Beats & Producción
+        </span>
+        
+        <!-- Título principal con mayor jerarquía y sombras sutiles -->
+        <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-center leading-[0.85] mb-6 drop-shadow-2xl">
+            <span class="block text-white">
+                CATÁLOGO
+            </span>
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]">
+                MUSICAL
+            </span>
         </h1>
 
-        <!-- Contenedor que será renderizado por Django MVT en base de datos -->
-        <div id="contenedor-canciones" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for beat in beats %}
-            <!-- Tarjeta de ejemplo para el Beat -->
-            <div class="p-8 border border-white/10 bg-[#111] hover:border-yellow-500/50 transition-colors rounded-2xl">
-                <h3 class="text-xl font-bold text-white uppercase">{{ beat.titulo }}</h3>
-                <p class="text-gray-500 text-sm mt-2">BPM: <span class="text-white">{{ beat.bpm }}</span> | Tono: <span class="text-white">{{ beat.tono }}</span></p>
-                <button class="mt-4 px-6 py-2 bg-yellow-500 text-black font-bold uppercase rounded-xl text-xs">Escuchar</button>
-            </div>
-            {% empty %}
-            <!-- Estado vacío cuando no hay beats en la base de datos PostgreSQL -->
-            <div class="col-span-full p-8 border border-white/10 bg-white/5 rounded-2xl text-center">
-                <p class="text-gray-500 font-light">Aún no hay beats registrados en el catálogo.</p>
-            </div>
-            {% endfor %}
-        </div>
-    </main>
+        <!-- Línea divisoria elegante -->
+        <div class="w-16 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent my-6 opacity-60"></div>
 
+        <!-- Descripción ordenada -->
+        <p class="text-gray-400 font-light text-center max-w-2xl text-base md:text-xl px-4 leading-relaxed">
+            Explora mis producciones más recientes. Trabajos de mezcla, mastering y colaboraciones exclusivas.
+        </p>
+    </div>
+</main>
+
+<!-- SECCIÓN: ELÍAH-GZ -->
+<section class="min-h-screen bg-[#0a0a0a] pt-32 pb-16 px-4 md:pt-40 md:pb-24 md:px-8 flex flex-col items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+    <div class="absolute top-1/2 left-0 w-64 h-64 md:w-[500px] md:h-[500px] bg-yellow-600/10 rounded-full blur-[80px] md:blur-[120px] -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    
+    <div class="max-w-7xl w-full text-center mb-12 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase">
+            Elíah-Gz
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-yellow-500 to-yellow-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Lista de Spotify (1 columna centrada) -->
+    <div class="w-full max-w-3xl flex flex-col gap-8 z-10 mx-auto">
+        
+        <!-- Slot Spotify 1.1 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <!-- Cuando tengas el enlace, reemplaza este div por el iframe que te da Spotify -->
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/532SrrBS2WL9l7Bt7tFXqx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Slot Spotify 1.2 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <!-- Cuando tengas el enlace, reemplaza este div por el iframe que te da Spotify -->
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2MYp7jviCc9VnAnNVskGDE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN: MEDELCILLO -->
+<section class="min-h-screen bg-[#0a0a0a] pt-32 pb-16 px-4 md:pt-40 md:pb-24 md:px-8 flex flex-col items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+    <div class="absolute top-1/2 left-0 w-64 h-64 md:w-[500px] md:h-[500px] bg-yellow-600/10 rounded-full blur-[80px] md:blur-[120px] -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    
+    <div class="max-w-7xl w-full text-center mb-12 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase">
+            Medelcillo
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-yellow-500 to-yellow-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Lista de Spotify (1 columna centrada) -->
+    <div class="w-full max-w-3xl flex flex-col gap-8 z-10 mx-auto">
+        <!-- Slot Spotify Medelcillo -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3V3TPQznF7E0IW4x6RZR3P?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+
+<!-- SECCIÓN: LEY SECA -->
+<section class="min-h-screen bg-[#0a0a0a] pt-32 pb-32 px-4 md:pt-40 md:pb-40 md:px-8 flex flex-col items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+    <div class="absolute top-1/2 right-0 w-64 h-64 md:w-[500px] md:h-[500px] bg-yellow-600/10 rounded-full blur-[80px] md:blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    
+    <div class="max-w-7xl w-full text-center mb-12 relative z-10">
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase">
+            Ley Seca
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-yellow-500 to-yellow-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Lista de Spotify (1 columna centrada) -->
+    <div class="w-full max-w-3xl flex flex-col gap-8 z-10 mx-auto">
+        
+        <!-- Track 1 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4UbOiAWdAtq6oLyoRbbCIA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6YqYIJ2f1LnzGmqibfmWst?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0uRQEcdFFk9q7HIKQVG0JB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Z8AmVAby68ZJ8kbE95nXj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 5 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0vf1AqUoDMYV98CTDats2Q?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 6 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7A6mwut64JDgzRq0zHMO8r?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 7 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2ZYzxTLlHwmMywet8QulOt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 8 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Z8AbATFrzcZFwvKOeMpUt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 9 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7G0j1KTz8zyFwmvRzwa1vj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 10 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2o5IezPYt4qyEzpRWvuQ6F?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Track 11 -->
+        <div class="spotify-container relative bg-[#0f0f0f] border border-white/5 hover:border-yellow-500/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] group">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/0 to-yellow-600/40 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500 -z-10"></div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4tWdJeV8cxBrq7fZuFgYdP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+    </div>
+</section>
 {% endblock %}
