@@ -10,6 +10,16 @@
     box-shadow: 0 15px 35px rgba(234, 179, 8, 0.2);
 }
 
+/* Corrige el padding-top del hero según tamaño del navbar:
+   - Móvil (flex-col): navbar ~160-180px
+   - Desktop (flex-row): navbar ~90px
+*/
+@media (min-width: 768px) {
+    main.music-hero {
+        padding-top: 100px !important;
+    }
+}
+
 .animate-pulse-slow {
     animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
