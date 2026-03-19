@@ -1,0 +1,82 @@
+/* ============================================
+   MUSICA.CSS — Estilos de la página Catálogo
+   Cargado solo en musica.html via {% block extra_css %}
+   ============================================ */
+
+/* ── Encabezado del catálogo ─────────────── */
+.catalogo-titulo {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fde68a, #eab308, #ca8a04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+}
+
+/* ── Tarjeta de Beat ────────────────────── */
+.beat-card {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #111;
+    border-radius: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.beat-card:hover {
+    border-color: rgba(234, 179, 8, 0.5);
+}
+
+.beat-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.beat-card__meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.beat-card__meta span {
+    color: #ffffff;
+}
+
+/* ── Botón "Escuchar" ───────────────────── */
+.btn-listen {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #eab308;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-listen:hover {
+    background-color: #facc15;
+    transform: scale(1.03);
+}
+
+/* ── Estado vacío del catálogo ──────────── */
+.catalogo-empty {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    text-align: center;
+    color: #6b7280;
+    font-weight: 300;
+}

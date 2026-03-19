@@ -1,4 +1,4 @@
-{% extends 'layout/base.html' %}
+﻿{% extends 'layout/base.html' %}
 {% load static %}
 
 {% block title %}Xp3xtro | Productor Musical{% endblock %}
@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<!-- SECCIÓN HERO (El primer impacto) -->
+<!-- SECCIÃ“N HERO (El primer impacto) -->
 <main class="relative h-screen flex flex-col justify-center items-center px-4 md:px-8 z-10">
     <!-- Efecto de luz de fondo (El "Alma" visual) -->
     <div
@@ -79,8 +79,14 @@
                 class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-[50px] -mr-10 -mt-10 pointer-events-none">
             </div>
 
-            <span
-                class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-6">🎧</span>
+            <!-- Ícono de audífonos SVG (reemplaza el emoji que no renderizaba bien) -->
+            <div class="mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 text-yellow-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 19c0 1.105-.895 2-2 2H5a2 2 0 01-2-2v-3a2 2 0 012-2h2m10 5c0 1.105-.895 2-2 2h-2a2 2 0 01-2-2v-3a2 2 0 012-2h2M5 14v-4a7 7 0 0114 0v4" />
+                </svg>
+            </div>
             <h3 class="text-2xl font-black text-white mb-2 tracking-wider uppercase">Beat</h3>
 
             <!-- Etiqueta de Precio -->

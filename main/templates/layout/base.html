@@ -27,15 +27,19 @@
     <!-- MENÚ DE NAVEGACIÓN -->
     <header class="fixed top-0 w-full z-50 mix-blend-difference px-4 md:px-8 py-4 md:py-6 border-b border-yellow-500/30">
         <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-3 md:gap-0">
-            <div class="text-xl md:text-2xl font-black tracking-tighter uppercase"><a href="{% url 'main:home' %}">Xp3xtro</a></div>
-            <!-- Logo central -->
-            <a href="{% url 'main:home' %}" style="isolation: isolate;">
+            <!-- Lado izquierdo: flex-1 para equilibrar con el lado derecho -->
+            <div class="flex-1 text-xl md:text-2xl font-black tracking-tighter uppercase">
+                <a href="{% url 'main:home' %}">Xp3xtro</a>
+            </div>
+            <!-- Logo central: siempre en el medio exacto -->
+            <a href="{% url 'main:home' %}" style="isolation: isolate; flex-shrink: 0;">
                 {% load static %}
                 <img src="{% static 'img/logo/logo_1.PNG' %}" alt="Xp3xtro Logo"
                     class="h-12 md:h-14 aspect-square object-cover rounded-full"
                     style="box-shadow: 0 0 0 2px rgba(234,179,8,0.5), 0 0 20px rgba(234,179,8,0.25); object-position: center;">
             </a>
-            <ul class="flex space-x-6 md:space-x-8 text-xs md:text-sm font-medium tracking-widest uppercase">
+            <!-- Lado derecho: flex-1 + justify-end para equilibrar con el izquierdo -->
+            <ul class="flex-1 flex justify-end space-x-6 md:space-x-8 text-xs md:text-sm font-medium tracking-widest uppercase">
                 <li><a href="{% url 'main:home' %}"
                         class="hover:text-yellow-500 transition-colors {% block nav_home %}opacity-50 hover:opacity-100{% endblock %}">Home</a></li>
                 <li><a href="{% url 'main:music' %}"

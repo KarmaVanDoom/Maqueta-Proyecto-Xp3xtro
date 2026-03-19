@@ -1,3 +1,4 @@
+# archivo de configuración para desplegar el proyecto en Render, 
 services:
   - type: web
     name: xp3xtro

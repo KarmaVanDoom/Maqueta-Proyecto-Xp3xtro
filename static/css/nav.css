@@ -1,7 +1,118 @@
-/* ESTILOS DEL MENÚ (NAVBAR) */
-/* Creado para no saturar el index.html */
+/* ============================================
+   NAV.CSS — Estilos del menú de navegación
+   Cargado en TODAS las páginas via base.html
+   ============================================ */
 
-header {
-    /* Filtro para que el menú se lea bien sea cual sea el fondo */
+/* ── Header fijo ────────────────────────── */
+header.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    mix-blend-mode: difference;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(234, 179, 8, 0.3);
+
+    /* Efecto de vidrio para legibilidad sobre cualquier fondo */
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@media (min-width: 768px) {
+    header.site-header {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* ── Nav interno ────────────────────────── */
+.site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80rem;
+    margin: 0 auto;
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .site-nav {
+        flex-direction: row;
+        gap: 0;
+    }
+}
+
+/* ── Logo / nombre del productor ────────── */
+.site-logo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (min-width: 768px) {
+    .site-logo {
+        font-size: 1.5rem;
+    }
+}
+
+/* ── Logo imagen central ─────────────────  */
+.site-logo-img {
+    height: 3rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 9999px;
+    box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.5), 0 0 20px rgba(234, 179, 8, 0.25);
+}
+
+@media (min-width: 768px) {
+    .site-logo-img {
+        height: 3.5rem;
+    }
+}
+
+/* ── Links de navegación ────────────────── */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        gap: 2rem;
+    }
+}
+
+.nav-links a {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.5;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+@media (min-width: 768px) {
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
+
+.nav-links a:hover {
+    color: #eab308;
+    opacity: 1;
+}
+
+/* Link activo (página actual) */
+.nav-links a.active {
+    opacity: 1;
+    color: #eab308;
 }
