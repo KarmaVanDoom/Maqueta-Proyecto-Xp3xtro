@@ -1,29 +1,54 @@
-/* BASE CSS */
-/* Integrando el núcleo de Tailwind CSS v4 */
-@import "tailwindcss";
+/* ============================================
+   BASE.CSS — Variables globales y estilos base
+   Cargado en TODAS las páginas via base.html
+   ============================================ */
 
-/* Usado para variables globales y pequeños ajustes que Tailwind no cubre por defecto */
-
+/* ── Paleta de colores del proyecto ────── */
 :root {
-    --core-gold: #eab308;
-    --core-dark: #0a0a0a;
+    /* Colores principales */
+    --core-gold:        #eab308;
+    --core-gold-light:  #facc15;
+    --core-gold-dim:    #ca8a04;
+    --core-dark:        #0a0a0a;
+    --core-surface:     #111111;
+    --core-surface-2:   #1a1a1a;
+
+    /* Bordes */
+    --core-border:      rgba(255, 255, 255, 0.1);
+    --core-border-gold: rgba(234, 179, 8, 0.3);
+
+    /* Texto */
+    --core-text-muted:  #6b7280;
+    --core-text-dim:    #9ca3af;
+
+    /* Sombras de brillo gold */
+    --glow-sm:  0 0 15px rgba(234, 179, 8, 0.25);
+    --glow-md:  0 0 30px rgba(234, 179, 8, 0.35);
+    --glow-lg:  0 0 60px rgba(234, 179, 8, 0.4);
 }
 
+/* ── Estilos base del body ──────────────── */
 body {
-    /* Deslizamiento suave general */
     scroll-behavior: smooth;
     background-color: var(--core-dark);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/* Animación de pulso personalizada para el 'Alma' visual */
-@keyframes glow-pulse {
+/* ── Selección de texto ─────────────────── */
+::selection {
+    background-color: #ca8a04;
+    color: #ffffff;
+}
 
-    0%,
-    100% {
+/* ── Animación de pulso (elementos decorativos) */
+@keyframes glow-pulse {
+    0%, 100% {
         opacity: 0.3;
         transform: translate(-50%, -50%) scale(1);
     }
-
     50% {
         opacity: 0.6;
         transform: translate(-50%, -50%) scale(1.1);
@@ -32,4 +57,61 @@ body {
 
 .animate-pulse-slow {
     animation: glow-pulse 6s infinite ease-in-out;
+}
+
+/* ── Elemento decorativo de fondo (reutilizable en todas las secciones) */
+.section-glow {
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(234, 179, 8, 0.05);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Títulos de sección reutilizables ───── */
+.section-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    background: linear-gradient(to right, #ffffff, #9ca3af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title--gold {
+    background: linear-gradient(to right, #fde68a, #eab308, #ca8a04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Botón primario (gold) ──────────────── */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--core-gold);
+    color: #000;
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease, transform 0.15s ease;
+    box-shadow: var(--glow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--core-gold-light);
+    box-shadow: var(--glow-md);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
 }

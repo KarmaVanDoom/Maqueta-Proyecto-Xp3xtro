@@ -1,0 +1,13 @@
+/* ============================================
+   INPUT.CSS — Punto de entrada de Tailwind CSS
+   Este archivo genera tailwind_output.css.
+   Para regenerar corré:
+   npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind_output.css --watch
+   ============================================ */
+
+@import "tailwindcss";
+@source "../../main/templates";
+
+/* ── Estilos propios del proyecto ─────────── */
+@import './base.css';
+@import './nav.css';

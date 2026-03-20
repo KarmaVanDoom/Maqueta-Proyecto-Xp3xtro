@@ -1,4 +1,217 @@
-/* ESTILOS DEL INICIO (HOME) */
-/* Botones, títulos y secciones específicas de la pantalla principal */
+/* ============================================
+   HOME.CSS — Estilos específicos de la Home
+   Cargado solo en index.html via {% block extra_css %}
+   ============================================ */
 
-/* Aquí pondremos efectos hover avanzados o degradados complejos que Tailwind haría muy largos en el HTML */
+/* ── Sección Hero ───────────────────────── */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 1.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 8rem 2rem 5rem;
+    }
+}
+
+.hero-title {
+    font-size: clamp(3rem, 12vw, 9rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-top: 1.5rem;
+}
+
+/* ── Tartjeta de Artista ────────────────── */
+.artist-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+}
+
+.artist-card__glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(to right, rgba(234,179,8,0), rgba(202,138,4,0.4));
+    border-radius: 0.75rem;
+    filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.artist-card:hover .artist-card__glow {
+    opacity: 1;
+}
+
+.artist-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .artist-card__inner:hover {
+        border-color: rgba(234,179,8,0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(234,179,8,0.1);
+    }
+}
+
+.artist-card__bg {
+    position: absolute;
+    inset: 0;
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7s ease;
+}
+
+@media (min-width: 768px) {
+    .artist-card:hover .artist-card__bg {
+        transform: scale(1.1);
+    }
+}
+
+.artist-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #000, rgba(0,0,0,0.7), transparent);
+    transition: opacity 0.3s ease;
+}
+
+.artist-card__content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 1.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-card__name {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* ── Botón "Conocer" ─────────────────── */
+.btn-conocer {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #eab308;
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 0 15px rgba(234,179,8,0.3);
+}
+
+.btn-conocer:hover {
+    background-color: #facc15;
+}
+
+.btn-conocer:active {
+    transform: scale(0.95);
+}
+
+/* ── Pricing Cards ──────────────────────── */
+.pricing-card {
+    background-color: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    border-color: rgba(234,179,8,0.3);
+    box-shadow: 0 0 30px rgba(234,179,8,0.08);
+    transform: translateY(-4px);
+}
+
+.pricing-card--featured {
+    border-color: rgba(234,179,8,0.4);
+    background: linear-gradient(135deg, #111 0%, #1a1500 100%);
+}
+
+/* ── Sección estudio (slider) ───────────── */
+.studio-slide {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: border-color 0.3s ease;
+}
+
+.studio-slide:hover {
+    border-color: rgba(234,179,8,0.3);
+}
+
+/* ── Botón YouTube ──────────────────────── */
+.btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 3rem;
+    background: linear-gradient(to right, #eab308, #ca8a04);
+    border: 1px solid #fde68a;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 30px rgba(234,179,8,0.25);
+}
+
+.btn-youtube:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(234,179,8,0.6);
+}
+
+.btn-youtube svg {
+    transition: color 0.3s ease;
+}
+
+.btn-youtube:hover svg {
+    color: #b91c1c;
+}

@@ -12,6 +12,9 @@
     <!-- Tailwind CSS (Compilado para Producción) -->
     <link rel="stylesheet" href="{% static 'css/tailwind_output.css' %}">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
@@ -35,8 +38,8 @@
             <a href="{% url 'main:home' %}" style="isolation: isolate; flex-shrink: 0;">
                 {% load static %}
                 <img src="{% static 'img/logo/logo_1.PNG' %}" alt="Xp3xtro Logo"
-                    class="h-12 md:h-14 aspect-square object-cover rounded-full"
-                    style="box-shadow: 0 0 0 2px rgba(234,179,8,0.5), 0 0 20px rgba(234,179,8,0.25); object-position: center;">
+                    class="h-12 md:h-14 w-auto object-contain rounded-xl"
+                    style="box-shadow: 0 0 0 2px rgba(234,179,8,0.5), 0 0 20px rgba(234,179,8,0.25);">
             </a>
             <!-- Lado derecho: flex-1 + justify-end para equilibrar con el izquierdo -->
             <ul class="flex-1 flex justify-end space-x-6 md:space-x-8 text-xs md:text-sm font-medium tracking-widest uppercase">
