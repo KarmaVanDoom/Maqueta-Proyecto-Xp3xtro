@@ -136,16 +136,10 @@
                         <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" 
                             class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600">
                     </div>
-                    <!-- Asunto -->
                     <div class="flex flex-col gap-1">
                         <label for="asunto" class="text-xs uppercase tracking-widest text-gray-400 font-bold ml-1">Asunto</label>
-                        <select id="asunto" name="asunto"
-                            class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all appearance-none cursor-pointer">
-                            <option value="booking">Booking / Fechas</option>
-                            <option value="beat">Comprar Beat / Custom Beat</option>
-                            <option value="collab">Colaboración</option>
-                            <option value="other">Otro asunto</option>
-                        </select>
+                        <input type="text" id="asunto" name="asunto" required placeholder="¿En qué puedo ayudarte?" 
+                            class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600">
                     </div>
                     <!-- Mensaje -->
                     <div class="flex flex-col gap-1">
