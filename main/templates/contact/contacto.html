@@ -1,6 +1,6 @@
 {% extends 'layout/base.html' %}
 
-{% block title %}Contacto | Xp3xtro{% endblock %}
+{% block title %}Contacto | Sp3xtr0{% endblock %}
 
 {% block extra_css %}
 {% load static %}
@@ -122,27 +122,27 @@
                 {% endif %}
 
                 <!-- Formulario Seguro con protección CSRF -->
-                <form action="{% url 'main:contact' %}" method="POST" class="flex flex-col gap-5">
+                <form action="{% url 'main:contact' %}" method="POST" class="flex flex-col gap-8" onsubmit="this.querySelector('button[type=submit]').disabled = true;">
                     {% csrf_token %}
                     <!-- Nombre -->
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-4">
                         <label for="nombre" class="text-xs uppercase tracking-widest text-gray-400 font-bold ml-1">Nombre</label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre artístico o real" 
                             class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600">
                     </div>
                     <!-- Email -->
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-4">
                         <label for="email" class="text-xs uppercase tracking-widest text-gray-400 font-bold ml-1">Email</label>
                         <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" 
                             class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600">
                     </div>
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-4">
                         <label for="asunto" class="text-xs uppercase tracking-widest text-gray-400 font-bold ml-1">Asunto</label>
                         <input type="text" id="asunto" name="asunto" required placeholder="¿En qué puedo ayudarte?" 
                             class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600">
                     </div>
                     <!-- Mensaje -->
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-4">
                         <label for="mensaje" class="text-xs uppercase tracking-widest text-gray-400 font-bold ml-1">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" required rows="4" placeholder="Cuéntame sobre tu proyecto..." 
                             class="bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-600 resize-none"></textarea>

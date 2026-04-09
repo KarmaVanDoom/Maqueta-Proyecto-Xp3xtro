@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,22 +84,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', # Se usa postgresql
-        'NAME': 'xp3xtro_db',      # Nombre de la BD que acabas de crear
-        'USER': 'postgres',        # Usuario estándar (modificable en DBeaver)
-        'PASSWORD': '12345',       # La contraseña que pediste
-        'HOST': 'localhost',
-        'PORT': '5432',            # Puerto por defecto de PostgreSQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-# Configuraciones para bases de datos de producción (usando DATABASE_URL de Render)
-if 'RENDER' in os.environ:
-    DATABASES['default'] = dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+
 
 
 # Password validation

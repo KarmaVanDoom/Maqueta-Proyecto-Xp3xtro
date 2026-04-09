@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block title %}Xp3xtro | Productor Musical{% endblock %}
+{% block title %}Sp3xtr0 | Productor Musical{% endblock %}
 
 {% block nav_home %}{% endblock %}
 
@@ -33,7 +33,7 @@
     </a>
 
     <!-- Indicador de Scroll -->
-    <a href="#cotizaciones" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50 hover:opacity-100 transition-opacity cursor-pointer text-decoration-none">
+    <a href="#studio" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50 hover:opacity-100 transition-opacity cursor-pointer text-decoration-none">
         <span class="text-xs uppercase tracking-[0.3em] mb-2 font-bold text-yellow-500">Scroll</span>
         <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
@@ -43,9 +43,9 @@
     </a>
 </main>
 
-<!-- SEGUNDO SCROLL (COTIZACIONES / SERVICIOS) -->
+<!-- SEGUNDO SCROLL (COTIZACIONES / SERVICIOS) - OCULTO POR PETICIÓN DEL USUARIO -->
 <section id="cotizaciones"
-    class="min-h-screen bg-[#0a0a0a] py-20 px-4 md:py-32 md:px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
+    class="hidden min-h-screen bg-[#0a0a0a] py-20 px-4 md:py-32 md:px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
 
     <!-- Luz de fondo sutil detrás de la tarjeta -->
     <div
@@ -117,16 +117,33 @@
 
             </ul>
 
+
             <button
                 class="w-full py-4 bg-yellow-500 text-black rounded-xl hover:bg-yellow-400 transition-colors font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(234,179,8,0.25)] hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:scale-[1.02]">
                 Solicitar Beat
             </button>
         </div>
     </div>
+
+    <!-- Overlay de Bloqueo -->
+    <div class="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-md z-20 flex flex-col items-center justify-center text-center p-6">
+        <div class="bg-[#0f0f0f] border border-yellow-500/30 p-8 rounded-3xl shadow-[0_0_50px_rgba(234,179,8,0.15)] flex flex-col items-center max-w-sm animate-pulse-slow">
+            <div class="w-20 h-20 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6 border border-yellow-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+            </div>
+            <h3 class="text-3xl font-black text-white mb-3 tracking-tighter uppercase">En Mantenimiento</h3>
+            <p class="text-gray-400 font-light leading-relaxed">
+                Estamos ajustando nuestras tarifas para brindarte la mejor calidad. <br>
+                <span class="text-yellow-500 font-bold mt-2 block tracking-widest uppercase text-sm">Próximamente</span>
+            </p>
+        </div>
+    </div>
 </section>
 
 <!-- TERCER SCROLL (EL ESTUDIO) -->
-<section
+<section id="studio"
     class="min-h-screen bg-[#0a0a0a] py-20 px-4 md:py-32 md:px-8 flex flex-col justify-center items-center border-[rgba(255,255,255,0.05)] border-t relative overflow-hidden">
 
     <!-- Elemento decorativo de fondo -->
@@ -158,7 +175,7 @@
                 <div class="w-full flex-shrink-0">
                     <!-- Contenedor principal -->
                     <div class="relative h-[450px] md:h-[600px] flex items-center justify-center overflow-hidden">
-                        <!-- Foto del estudio de Xp3xtro -->
+                        <!-- Foto del estudio de Sp3xtr0 -->
                         <div class="absolute inset-0 bg-cover bg-center opacity-70 hover:opacity-100 hover:scale-[1.03] transition-transform duration-[1.5s]"
                             style="background-image: url('{{ estudio1_url }}');">
                         </div>
@@ -173,7 +190,7 @@
                 <div class="w-full flex-shrink-0">
                     <!-- Contenedor principal -->
                     <div class="relative h-[450px] md:h-[600px] flex items-center justify-center overflow-hidden">
-                        <!-- Foto del estudio de Xp3xtro 2 -->
+                        <!-- Foto del estudio de Sp3xtr0 2 -->
                         <div class="absolute inset-0 bg-cover bg-center opacity-70 hover:opacity-100 hover:scale-[1.03] transition-transform duration-[1.5s]"
                             style="background-image: url('{{ estudio2_url }}');">
                         </div>

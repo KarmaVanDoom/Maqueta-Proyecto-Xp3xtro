@@ -26,12 +26,16 @@ def contact_view(request):
             
             # Formatear el mensaje para que se vea profesional en el chat
             texto_mensaje = (
-                f"🔥 *NUEVO MENSAJE DESDE LA WEB* 🔥\n\n"
-                f"*Nombre:* {nombre}\n"
-                f"*Asunto:* {asunto}\n"
-                f"*Email:* {email}\n\n"
-                f"*Mensaje:* {mensaje}"
+                f"SOLICITUD DE COTIZACIÓN - WEB\n"
+                f"------------------------------------------\n\n"
+                f"CLIENTE : {nombre}\n"
+                f"ASUNTO  : {asunto}\n"
+                f"CONTACTO: {email}\n\n"
+                f"MENSAJE:\n"
+                f"{mensaje}\n\n"
+                f"------------------------------------------"
             )
+            
             
             # Codificar el texto para que sea seguro en una URL
             texto_codificado = urllib.parse.quote(texto_mensaje)

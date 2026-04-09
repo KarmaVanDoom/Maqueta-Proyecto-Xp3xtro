@@ -1,7 +1,7 @@
 # archivo de configuración para desplegar el proyecto en Render, 
 services:
   - type: web
-    name: xp3xtro
+    name: sp3xtr0
     runtime: python
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: gunicorn core.wsgi:application

@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Xp3xtro | Productor Musical{% endblock %}</title>
+    <title>{% block title %}Sp3xtr0 | Productor Musical{% endblock %}</title>
     <meta name="description"
-        content="{% block description %}Portafolio oficial de Xp3xtro. Descubre mis últimos beats, producciones en alta calidad (.wav) y colaboraciones.{% endblock %}">
+        content="{% block description %}Portafolio oficial de Sp3xtr0. Descubre mis últimos beats, producciones en alta calidad (.wav) y colaboraciones.{% endblock %}">
 
     <!-- Tailwind CSS (Compilado para Producción) -->
     <link rel="stylesheet" href="{% static 'css/tailwind_output.css' %}">
@@ -32,12 +32,12 @@
         <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-3 md:gap-0">
             <!-- Lado izquierdo: flex-1 para equilibrar con el lado derecho -->
             <div class="flex-1 text-xl md:text-2xl font-black tracking-tighter uppercase">
-                <a href="{% url 'main:home' %}">Xp3xtro</a>
+                <a href="{% url 'main:home' %}">Sp3xtr0</a>
             </div>
             <!-- Logo central: siempre en el medio exacto -->
             <a href="{% url 'main:home' %}" style="isolation: isolate; flex-shrink: 0;">
                 {% load static %}
-                <img src="{% static 'img/logo/logo_1.PNG' %}" alt="Xp3xtro Logo"
+                <img src="{% static 'img/logo/logo_1.PNG' %}" alt="Sp3xtr0 Logo"
                     class="h-12 md:h-14 w-auto object-contain rounded-xl"
                     style="box-shadow: 0 0 0 2px rgba(234,179,8,0.5), 0 0 20px rgba(234,179,8,0.25);">
             </a>
