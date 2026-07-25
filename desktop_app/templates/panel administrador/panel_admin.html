@@ -1,0 +1,14 @@
+<!-- Plantilla de Referencia para el Panel de Administración de Django -->
+<!-- Esta plantilla aplica los estilos oscuros y dorados de Sp3xtr0 a todo el panel admin -->
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | Sp3xtr0 Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}" style="color: #eab308; font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;">
+        ⚡ SP3XTR0 <span style="color: #ffffff; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Panel Admin</span>
+    </a>
+</h1>
+{% endblock %}
