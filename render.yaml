@@ -1,12 +1,18 @@
-# archivo de configuración para desplegar el proyecto en Render, 
+# Configuración de despliegue en Render
 services:
   - type: web
-    name: sp3xtr0
+    name: pagina-official-xp3xtro
     runtime: python
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
     startCommand: gunicorn core.wsgi:application
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.0
+        value: 3.12.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: WHATSAPP_NUMBER
+        value: 56999580822
       - key: RENDER
         value: true

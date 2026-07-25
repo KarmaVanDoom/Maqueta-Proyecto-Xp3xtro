@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from decouple import config
 
 import urllib.parse
 
@@ -21,8 +22,7 @@ def contact_view(request):
         
         if nombre and email and mensaje:
             # --- LÓGICA DE WHATSAPP ---
-            # Tu número de WhatsApp real
-            mi_numero = "56999580822"
+            mi_numero = config('WHATSAPP_NUMBER')
             
             # Formatear el mensaje para que se vea profesional en el chat
             texto_mensaje = (

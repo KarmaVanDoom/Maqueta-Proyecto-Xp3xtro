@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sp3xtr0 - Launcher Oficial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Glow background */
+        .glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            z-index: 10;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            color: #eab308;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 650px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        .card {
+            background: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: rgba(234, 179, 8, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(234, 179, 8, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #eab308;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            line-height: 1.4;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.75rem;
+            color: #4b5563;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <div class="header">
+        <h1>SP3XTR0</h1>
+        <p>Control Panel & App Launcher</p>
+    </div>
+
+    <div class="grid">
+        <!-- BOTÓN 1: SITIO PÚBLICO -->
+        <div class="card" onclick="openPublic()">
+            <div class="card-icon">🌐</div>
+            <div class="card-title">Sitio Público</div>
+            <div class="card-desc">Acceder a la página web interactiva para todo el público.</div>
+        </div>
+
+        <!-- BOTÓN 2: PANEL DE ADMINISTRACIÓN -->
+        <div class="card" onclick="openAdmin()">
+            <div class="card-icon">⚙️</div>
+            <div class="card-title">Panel Admin</div>
+            <div class="card-desc">Gestionar artistas, canciones y contenido del sitio.</div>
+        </div>
+    </div>
+
+    <div class="footer">Sp3xtr0 Desktop App v1.0</div>
+
+    <script>
+        function openPublic() {
+            window.location.href = "https://pagina-official-xp3xtro.onrender.com/";
+        }
+
+        function openAdmin() {
+            window.location.href = "https://pagina-official-xp3xtro.onrender.com/admin/";
+        }
+    </script>
+</body>
+</html>

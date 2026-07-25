@@ -12,6 +12,10 @@ db.sqlite3
 staticfiles/
 media/
 
+# Variables de entorno (NUNCA subir)
+.env
+.env.*
+
 # Entornos virtuales
 venv/
 .venv/

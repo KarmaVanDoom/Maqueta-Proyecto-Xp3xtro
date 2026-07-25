@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,11 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4-1_t0u3nu_+2#2mq!!r71s6+hrdhma_ixd1ekm*wy==4efb)d'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Si estamos en Render, desactivamos DEBUG. Si estamos en local, se queda True.
-DEBUG = 'RENDER' not in os.environ
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*'] # En producción deberíamos poner el dominio de Render ('tu-app.onrender.com'), pero '*' funciona para pruebas.
 
