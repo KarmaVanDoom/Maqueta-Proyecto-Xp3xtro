@@ -11,138 +11,57 @@
 </h1>
 {% endblock %}
 
-{% block nav-global %}{% endblock %}
-
 {% block extrahead %}
 {{ block.super }}
 <style>
-    /* Estilos globales Oscuro + Dorado para Django Admin */
-    :root {
-        --primary-accent: #eab308;
-        --primary-hover: #facc15;
-        --bg-dark: #0a0a0a;
-        --card-dark: #121212;
-        --input-dark: #1a1a1a;
-        --text-white: #ffffff;
-        --text-muted: #9ca3af;
-    }
+    /* Sobrescribir variables CSS de Django 5 Admin */
+    :root, html[data-theme="dark"], html[data-theme="light"], body {
+        --primary: #eab308 !important;
+        --secondary: #ca8a04 !important;
+        --accent: #facc15 !important;
+        
+        --header-bg: #0f0f0f !important;
+        --header-color: #ffffff !important;
+        --header-link-color: #eab308 !important;
+        
+        --breadcrumbs-bg: #0a0a0a !important;
+        --breadcrumbs-link-color: #eab308 !important;
+        
+        --body-bg: #0a0a0a !important;
+        --body-quiet-color: #9ca3af !important;
+        --body-fg: #ffffff !important;
+        --body-loud-color: #ffffff !important;
 
-    body, html {
-        background-color: var(--bg-dark) !important;
-        color: var(--text-white) !important;
-        font-family: 'Segoe UI', system-ui, sans-serif !important;
+        --darkened-bg: #121212 !important;
+        --selected-bg: #1f1f1f !important;
+        --selected-row: rgba(234, 179, 8, 0.1) !important;
+        
+        --link-color: #eab308 !important;
+        --link-hover-color: #facc15 !important;
+        --link-selected-bg: #1a1a1a !important;
+        
+        --button-bg: #eab308 !important;
+        --button-hover-bg: #facc15 !important;
+        --button-fg: #000000 !important;
+
+        --border-color: rgba(255, 255, 255, 0.1) !important;
     }
 
     #header {
         background: #0f0f0f !important;
-        border-bottom: 1px solid rgba(234, 179, 8, 0.2) !important;
-        padding: 15px 25px !important;
+        border-bottom: 2px solid #eab308 !important;
     }
 
-    #user-tools a {
-        color: var(--primary-accent) !important;
-        font-weight: 700 !important;
-    }
-
-    /* Modulos y Tablas */
-    .module {
-        background: var(--card-dark) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 12px !important;
-        margin-bottom: 25px !important;
-        overflow: hidden !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .module h2, .module caption {
-        background: linear-gradient(90deg, #181818, #121212) !important;
-        color: var(--primary-accent) !important;
-        font-weight: 800 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        padding: 12px 16px !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-    }
-
-    table {
-        background: var(--card-dark) !important;
-        color: var(--text-white) !important;
-    }
-
-    th {
+    .module h2, .module caption, th, tr.header {
         background: #181818 !important;
-        color: var(--text-muted) !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        font-size: 0.75rem !important;
+        color: #eab308 !important;
+        font-weight: 800 !important;
     }
 
-    tr:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.02) !important;
-    }
-
-    tr:hover {
-        background-color: rgba(234, 179, 8, 0.05) !important;
-    }
-
-    a:link, a:visited {
-        color: var(--primary-accent) !important;
-    }
-
-    a:hover {
-        color: var(--primary-hover) !important;
-    }
-
-    /* Botones */
     .button, input[type=submit], input[type=button], .submit-row input {
-        background: linear-gradient(135deg, #eab308, #ca8a04) !important;
+        background: #eab308 !important;
         color: #000000 !important;
         font-weight: 800 !important;
-        border-radius: 8px !important;
-        border: none !important;
-        padding: 8px 18px !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .button:hover, input[type=submit]:hover, input[type=button]:hover {
-        background: linear-gradient(135deg, #facc15, #eab308) !important;
-        box-shadow: 0 0 15px rgba(234, 179, 8, 0.4) !important;
-    }
-
-    .button.deletelink {
-        background: #dc2626 !important;
-        color: #ffffff !important;
-    }
-
-    /* Campos de entrada */
-    input[type=text], input[type=password], input[type=email], select, textarea {
-        background-color: var(--input-dark) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: var(--text-white) !important;
-        border-radius: 6px !important;
-        padding: 8px 12px !important;
-    }
-
-    input[type=text]:focus, select:focus, textarea:focus {
-        border-color: var(--primary-accent) !important;
-        box-shadow: 0 0 10px rgba(234, 179, 8, 0.3) !important;
-    }
-
-    /* Breadcrumbs */
-    div.breadcrumbs {
-        background: #0f0f0f !important;
-        color: var(--text-muted) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-    }
-
-    div.breadcrumbs a {
-        color: var(--primary-accent) !important;
-    }
-
-    #content-main {
-        padding: 20px !important;
     }
 </style>
 {% endblock %}
