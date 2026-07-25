@@ -1,0 +1,48 @@
+# Entorno virtual de Python (no necesario en Docker)
+venv/
+.venv/
+env/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Base de datos local
+db.sqlite3
+
+# Variables de entorno sensibles
+.env
+.env.*
+
+# Dependencias de Node (solo para compilar Tailwind en local)
+node_modules/
+npm-debug.log*
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de Git
+.git/
+.gitignore
+
+# Archivos de IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales y logs
+*.log
+*.tmp
+
+# staticfiles se genera dentro del contenedor con collectstatic
+staticfiles/
+
+# Archivos de Docker (no copiar dentro de si mismos)
+Dockerfile
+docker-compose.yml
+.dockerignore

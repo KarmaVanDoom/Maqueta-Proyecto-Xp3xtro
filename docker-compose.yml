@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: xp3xtro_web
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta el codigo local para que los cambios se reflejen sin rebuilds
+      - .:/app
+      # Volumen separado para la base de datos SQLite (persiste entre reinicios)
+      - sqlite_data:/app/db.sqlite3
+    environment:
+      - PYTHONUNBUFFERED=1
+      # En local usamos DEBUG=True pasandolo aqui
+      - DEBUG=True
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers 2 --reload"
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
