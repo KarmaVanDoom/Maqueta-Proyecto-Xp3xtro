@@ -14,7 +14,7 @@
 {% block extrahead %}
 {{ block.super }}
 <style>
-    /* Sobrescribir variables CSS de Django 5 Admin */
+    /* Sobrescribir variables CSS de Django 5 Admin para ocupar el 100% del espacio */
     :root, html[data-theme="dark"], html[data-theme="light"], body {
         --primary: #eab308 !important;
         --secondary: #ca8a04 !important;
@@ -50,6 +50,22 @@
     #header {
         background: #0f0f0f !important;
         border-bottom: 2px solid #eab308 !important;
+    }
+
+    /* Expandir contenido al 100% de la ventana */
+    #container {
+        min-height: 100vh !important;
+        background-color: #0a0a0a !important;
+    }
+
+    #content {
+        max-width: 100% !important;
+        padding: 25px 40px !important;
+    }
+
+    #content-main {
+        float: none !important;
+        width: 100% !important;
     }
 
     .module h2, .module caption, th, tr.header {

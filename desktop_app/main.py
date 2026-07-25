@@ -8,27 +8,29 @@ class LauncherApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Sp3xtr0 - App Launcher & Control Panel")
-        self.resize(1000, 700)
+        self.resize(1100, 750)
 
         # Widget principal y Layout
         main_widget = QWidget()
         layout = QVBoxLayout(main_widget)
         layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(0)
 
-        # Barra superior con botón de inicio
+        # Barra superior ultradelgada con botón de inicio
         top_bar = QWidget()
-        top_bar.setStyleSheet("background-color: #0f0f0f; border-bottom: 1px solid #eab308;")
+        top_bar.setStyleSheet("background-color: #0b0b0b; border-bottom: 1px solid #eab308; min-height: 40px; max-height: 40px;")
         top_layout = QHBoxLayout(top_bar)
-        top_layout.setContentsMargins(10, 5, 10, 5)
+        top_layout.setContentsMargins(15, 4, 15, 4)
 
         home_btn = QPushButton("🏠 Menú Principal")
         home_btn.setStyleSheet("""
             QPushButton {
                 background-color: #eab308;
                 color: #000000;
-                font-weight: bold;
-                border-radius: 5px;
-                padding: 6px 14px;
+                font-weight: 800;
+                border-radius: 6px;
+                padding: 4px 12px;
+                font-size: 12px;
             }
             QPushButton:hover {
                 background-color: #facc15;
@@ -38,11 +40,12 @@ class LauncherApp(QMainWindow):
         top_layout.addWidget(home_btn)
         top_layout.addStretch()
 
-        layout.addWidget(top_bar)
+        # 0 = la barra mide solo lo necesario (40px)
+        layout.addWidget(top_bar, 0)
 
-        # Navegador WebEngine dentro de la ventana de escritorio
+        # 1 = el navegador ocupa todo el resto del espacio de la ventana
         self.browser = QWebEngineView()
-        layout.addWidget(self.browser)
+        layout.addWidget(self.browser, 1)
 
         self.setCentralWidget(main_widget)
 
